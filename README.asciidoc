@@ -4,6 +4,7 @@
 [.text-justify]
 
 = The DEV-ON time Platform for the .NET stack
+NOTE: This is a .net 8 branch. The .net 8 is in RC Status. Please do not use this version/branch for production environments. devon4net only uses LTS versions
 
 toc::[]
 
