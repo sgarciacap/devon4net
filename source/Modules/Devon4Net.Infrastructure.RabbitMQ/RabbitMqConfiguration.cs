@@ -102,7 +102,7 @@ namespace Devon4Net.Infrastructure.RabbitMQ
         private static HostConfiguration GetHostConfiguration(HostDefinition host)
         {
             var port = (ushort)(host.Port != null ? (ushort)host.Port.Value : 0);
-            var hostConfiguration = new HostConfiguration { Host = host.Host, Port = port};
+            var hostConfiguration = new HostConfiguration(host.Host, port);
 
             if (port > 0) hostConfiguration.Port = port;
             _ = Enum.TryParse(host.SslPolicyErrors, out SslPolicyErrors sslPolicyErrors);
