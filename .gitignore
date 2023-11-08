@@ -183,8 +183,9 @@ FakesAssemblies/
 # Dotnet Core
 project.lock.json
 /**/.vs/
-/**/.sonarqube/
+/**/.vscode
 /**/.idea/
+/**/.sonarqube/
 
 # AWS CDK
 /**/cdk.out

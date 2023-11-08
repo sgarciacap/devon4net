@@ -73,7 +73,7 @@ namespace Devon4Net.Infrastructure.RabbitMQ
             }
 
             using var sp = services.BuildServiceProvider();
-            var bus = sp.GetService<IBus>();
+            var bus = sp.GetService<SelfHostedBus>();
             var repoLite = sp.GetService<IRabbitMqBackupLiteDbService>();
             var repo = sp.GetService<IRabbitMqBackupService>();
 
