@@ -39,9 +39,9 @@ builder.Services.SetupCustomDependencyInjection(builder.Configuration);
 var app = builder.Build();
 
 #region devon app
-app.ConfigureSwaggerEndPoint();
-app.SetupMiddleware(builder.Services);
 app.SetupCors();
+app.SetupMiddleware(builder.Services);
+app.ConfigureSwaggerEndPoint();
 
 if (devonfwOptions.ForceUseHttpsRedirection || (!devonfwOptions.UseIIS && devonfwOptions.Kestrel.UseHttps))
 {
@@ -50,7 +50,7 @@ if (devonfwOptions.ForceUseHttpsRedirection || (!devonfwOptions.UseIIS && devonf
 #endregion
 
 app.UseStaticFiles();
-app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 
